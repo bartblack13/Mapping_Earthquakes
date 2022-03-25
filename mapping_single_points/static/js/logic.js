@@ -16,6 +16,20 @@ let map = L.map('mapid').setView([40.7, -94.5], 4);
 // // Then we add our 'graymap' tile layer to the map.
 // streets.addTo(map);
 
+//  Add a marker to the map for Los Angeles, California.
+// let marker = L.marker([34.0522, -118.2437]).addTo(map);
+// add circle instead of marker
+// let marker = L.circle([34.0522, -118.2437], {
+//     radius: 500
+//  }).addTo(map);
+// add tan filled marker with black border measured in pixels with circleMarker function
+// for dark map use "dark-v10" instead of streets-v11 in tileLayer url below
+ let marker = L.circleMarker([34.0522, -118.2437],{
+     radius: 50,
+     color: "black",
+     fillColor: '#ffffa1'
+ }).addTo(map);
+
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
